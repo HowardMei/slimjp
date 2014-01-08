@@ -1,12 +1,12 @@
 <?php
 
 /*
- * Plugin Name: Jetpack by WordPress.com
- * Plugin URI: http://wordpress.org/extend/plugins/jetpack/
- * Description: Bring the power of the WordPress.com cloud to your self-hosted WordPress. Jetpack enables you to connect your blog to a WordPress.com account to use the powerful features normally only available to WordPress.com users.
- * Author: Automattic
+ * Plugin Name: Slimjp
+ * Plugin URI: https://github.com/HowardMei/slimjp/releases
+ * Description: Plug-n-pay Slimjp totally unlinked from WordPress.Com with less obtrusive admin page.
+ * Author: WingerSpeed
  * Version: 2.9.3
- * Author URI: http://jetpack.me
+ * Author URI: https://github.com/HowardMei/
  * License: GPL2+
  * Text Domain: jetpack
  * Domain Path: /languages/
