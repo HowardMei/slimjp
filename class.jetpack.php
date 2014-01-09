@@ -1759,7 +1759,6 @@ p {
 		}
 		//slim// Move the admin menu to settings
 		$hook = add_submenu_page( 'options-general.php', $title, $title, 'read', 'jetpack', array( $this, 'admin_page' ), 'div' );
-
 		$debugger_hook = add_submenu_page( null, __( 'Jetpack Debugging Center', 'jetpack' ), '', 'manage_options', 'jetpack-debugger', array( $this, 'debugger_page' ) );
 		add_action( "admin_head-$debugger_hook", array( 'Jetpack_Debugger', 'jetpack_debug_admin_head' ) );
 
@@ -1780,6 +1779,14 @@ p {
 
 		add_action( "admin_print_scripts-$hook", array( $this, 'admin_scripts' ) );
 
+		if ( function_exists('akismet_conf') ) {
+			function akismet_reload_menu() {	
+				add_submenu_page('options-general.php', __('Akismet'), __('Akismet'), 'manage_options', 'akismet-key-config', 'akismet_conf');
+				add_submenu_page('edit-comments.php', __('Akismet Stats'), __('Akismet Stats'), 'manage_options', 'akismet-stats-display', 'akismet_stats_display');
+				}
+			add_action( 'jetpack_admin_menu', 'akismet_reload_menu' );
+		}
+		
 		do_action( 'jetpack_admin_menu', $hook );
 	}
 /*
