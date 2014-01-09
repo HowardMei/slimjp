@@ -323,9 +323,9 @@ class Jetpack {
 		add_action( 'wp_ajax_jetpack-sync-reindex-status', array( $this, 'sync_reindex_status' ) );
 
 		add_action( 'wp_loaded', array( $this, 'register_assets' ) );
-		add_action( 'wp_enqueue_scripts', array( $this, 'devicepx' ) );
-		add_action( 'customize_controls_enqueue_scripts', array( $this, 'devicepx' ) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'devicepx' ) );
+		//slim//add_action( 'wp_enqueue_scripts', array( $this, 'devicepx' ) );
+		//slim//add_action( 'customize_controls_enqueue_scripts', array( $this, 'devicepx' ) );
+		//slim//add_action( 'admin_enqueue_scripts', array( $this, 'devicepx' ) );
 
 		add_filter( 'jetpack_require_lib_dir', array( $this, 'require_lib_dir' ) );
 
@@ -426,9 +426,10 @@ class Jetpack {
 	 * Device Pixels support
 	 * This improves the resolution of gravatars and wordpress.com uploads on hi-res and zoomed browsers.
 	 */
+	 //slim//
 	function devicepx() {
 		if ( Jetpack::is_active() ) {
-			wp_enqueue_script( 'devicepx', set_url_scheme( 'http://s0.wp.com/wp-content/js/devicepx-jetpack.js' ), array(), gmdate( 'oW' ), true );
+			wp_enqueue_script( 'devicepx', plugins_url( '_inc/devicepx-jetpack.js', __FILE__ ), array(), gmdate( 'oW' ), true );
 		}
 	}
 
