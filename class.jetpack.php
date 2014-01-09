@@ -282,9 +282,9 @@ class Jetpack {
 		//slim//add_action( 'wp_ajax_jetpack-subscribe-to-news', array( $this, 'subscribe_to_news' ) );
 
 		add_action( 'wp_loaded', array( $this, 'register_assets' ) );
-		add_action( 'wp_enqueue_scripts', array( $this, 'devicepx' ) );
-		add_action( 'customize_controls_enqueue_scripts', array( $this, 'devicepx' ) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'devicepx' ) );
+		//slim//add_action( 'wp_enqueue_scripts', array( $this, 'devicepx' ) );
+		//slim//add_action( 'customize_controls_enqueue_scripts', array( $this, 'devicepx' ) );
+		//slim//add_action( 'admin_enqueue_scripts', array( $this, 'devicepx' ) );
 
 		add_filter( 'jetpack_require_lib_dir', array( $this, 'require_lib_dir' ) );
 
@@ -378,8 +378,9 @@ class Jetpack {
 	 * Device Pixels support
 	 * This improves the resolution of gravatars and wordpress.com uploads on hi-res and zoomed browsers.
 	 */
+	 //slim//
 	function devicepx() {
-		wp_enqueue_script( 'devicepx', ( is_ssl() ? 'https' : 'http' ) . '://s0.wp.com/wp-content/js/devicepx-jetpack.js', array(), gmdate( 'oW' ), true );
+		wp_enqueue_script( 'devicepx', plugins_url( '_inc/devicepx-jetpack.js', __FILE__ ), array(), gmdate( 'oW' ), true );
 	}
 
 	/*
@@ -1675,7 +1676,6 @@ p {
 		}
 		//slim// Move the admin menu to settings
 		$hook = add_submenu_page( 'options-general.php', $title, $title, 'read', 'jetpack', array( $this, 'admin_page' ), 'div' );
-
 		$debugger_hook = add_submenu_page( null, __( 'Jetpack Debugging Center', 'jetpack' ), '', 'manage_options', 'jetpack-debugger', array( $this, 'debugger_page' ) );
 		add_action( "admin_head-$debugger_hook", array( 'Jetpack_Debugger', 'jetpack_debug_admin_head' ) );
 
@@ -1696,6 +1696,14 @@ p {
 
 		add_action( "admin_print_scripts-$hook", array( $this, 'admin_scripts' ) );
 
+		if ( function_exists('akismet_conf') ) {
+			function akismet_reload_menu() {	
+				add_submenu_page('options-general.php', __('Akismet'), __('Akismet'), 'manage_options', 'akismet-key-config', 'akismet_conf');
+				add_submenu_page('edit-comments.php', __('Akismet Stats'), __('Akismet Stats'), 'manage_options', 'akismet-stats-display', 'akismet_stats_display');
+				}
+			add_action( 'jetpack_admin_menu', 'akismet_reload_menu' );
+		}
+		
 		do_action( 'jetpack_admin_menu', $hook );
 	}
 /*
