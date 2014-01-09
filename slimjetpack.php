@@ -5,7 +5,7 @@
  * Plugin URI: http://wordpress.org/extend/plugins/slimjetpack/
  * Description: Plug-n-pay Slim Jetpack totally unlinked from WordPress.Com with less obtrusive admin page.
  * Author: WingerSpeed
- * Version: 2.7
+ * Version: 2.7.0.1
  * Author URI: https://github.com/HowardMei/slimjetpack
  * License: GPL2+
  * Text Domain: jetpack
