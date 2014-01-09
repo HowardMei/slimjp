@@ -47,8 +47,8 @@ require_once( JETPACK__PLUGIN_DIR . 'class.media-summary.php'         );
 require_once( JETPACK__PLUGIN_DIR . 'class.jetpack-error.php'         );
 require_once( JETPACK__PLUGIN_DIR . 'class.jetpack-debugger.php'      );
 require_once( JETPACK__PLUGIN_DIR . 'class.jetpack-heartbeat.php'     );
-require_once( JETPACK__PLUGIN_DIR . 'class.photon.php'                );
-require_once( JETPACK__PLUGIN_DIR . 'functions.photon.php'            );
+//slim//require_once( JETPACK__PLUGIN_DIR . 'class.photon.php'                );
+//slim//require_once( JETPACK__PLUGIN_DIR . 'functions.photon.php'            );
 require_once( JETPACK__PLUGIN_DIR . 'functions.compat.php'            );
 require_once( JETPACK__PLUGIN_DIR . 'functions.gallery.php'           );
 require_once( JETPACK__PLUGIN_DIR . 'require-lib.php'                 );
@@ -70,12 +70,14 @@ add_filter( 'jetpack_static_url', array( 'Jetpack', 'staticize_subdomain' ) );
  *
  * See: http://jetpack.me/2013/07/11/photon-and-themes/
  */
+/*
+//slim//
 if ( Jetpack::init()->is_module_active( 'photon' ) ) {
 	add_filter( 'jetpack_photon_url', 'jetpack_photon_url', 10, 3 );
 } else {
 	remove_filter( 'jetpack_photon_url', 'jetpack_photon_url', 10, 3 );
 }
-
+*/
 /*
 if ( is_admin() && ! Jetpack::check_identity_crisis() ) {
 	Jetpack_Sync::sync_options( __FILE__, 'db_version', 'jetpack_active_modules', 'active_plugins' );
