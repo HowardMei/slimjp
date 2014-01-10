@@ -46,6 +46,7 @@ svn status
 pause 'Press [Enter] key to continue...'
 svn status
 svn ci -m "Update trunk to version 2.7.0.1"
+cd "$curpath/slimjetpack"
 svn cp trunk tags/2.7.0.1
 svn ci -m "Release SlimJetpack V2.7.0.1"
 
