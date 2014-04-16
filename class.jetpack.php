@@ -1755,7 +1755,7 @@ p {
 			$span_title = esc_attr( sprintf( _n( 'One New Jetpack Module', '%s New Jetpack Modules', $new_modules_count, 'jetpack' ), $new_modules_count_i18n ) );
 			$title = sprintf( 'Jetpack %s', "<span class='update-plugins count-{$new_modules_count}' title='$span_title'><span class='update-count'>$new_modules_count_i18n</span></span>" );
 		} else {
-			$title = __( 'Slim Jetpack', 'jetpack' );
+			$title = __( 'Slim JP', 'jetpack' );
 		}
 		//slim// Move the admin menu to settings
 		$hook = add_submenu_page( 'options-general.php', $title, $title, 'read', 'jetpack', array( $this, 'admin_page' ), 'div' );
@@ -2015,7 +2015,7 @@ p {
 		} else {
 			$css = "
 				#toplevel_page_jetpack .wp-menu-image {
-					background: url( " . plugins_url( '_inc/images/menuicon-sprite.png', __FILE__ ) . " ) 0 90% no-repeat;
+					background: transparent;
 				}
 				/* Retina Jetpack Menu Icon */
 				@media  only screen and (-moz-min-device-pixel-ratio: 1.5),
@@ -2023,7 +2023,7 @@ p {
 						only screen and (-webkit-min-device-pixel-ratio: 1.5),
 						only screen and (min-device-pixel-ratio: 1.5) {
 					#toplevel_page_jetpack .wp-menu-image {
-						background: url( " . plugins_url( '_inc/images/menuicon-sprite-2x.png', __FILE__ ) . " ) 0 90% no-repeat;
+						background: transparent;
 						background-size:30px 64px;
 					}
 				}
@@ -3026,7 +3026,7 @@ p {
 			<?php
 				$module = Jetpack::get_module( $module_id );
 				//slim// Change name
-				echo '<a href="' . menu_page_url( 'jetpack', false ) . '">' . __( 'Slim Jetpack', 'jetpack' ) . '</a> &rarr; ';
+				echo '<a href="' . menu_page_url( 'jetpack', false ) . '">' . __( 'Slim JP', 'jetpack' ) . '</a> &rarr; ';
 				printf( __( 'Configure %s', 'jetpack' ), $module['name'] );
 			?>
 			</h3>

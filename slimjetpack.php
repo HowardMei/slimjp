@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Plugin Name: Slimjp
+ * Plugin Name: Slim JP
  * Plugin URI: https://github.com/HowardMei/slimjp/releases
  * Description: Plug-n-pay Slimjp totally unlinked from WordPress.Com with less obtrusive admin page.
  * Author: WingerSpeed
