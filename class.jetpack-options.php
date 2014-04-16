@@ -13,8 +13,10 @@ class Jetpack_Options {
 				'do_activate',
 				'log',
 				'publicize',
+				'slideshow_background_color',
 				'widget_twitter',
 				'wpcc_options',
+				'relatedposts',
 			);
 		}
 
@@ -36,6 +38,7 @@ class Jetpack_Options {
 			'identity_crisis_whitelist',    // (array)  An array of options, each having an array of the values whitelisted for it.
 			'gplus_authors',                // (array)  The Google+ authorship information for connected users.
 			'last_heartbeat',               // (int)    The timestamp of the last heartbeat that fired.
+			'sync_bulk_reindexing',         // (bool)   If a bulk reindex is currently underway.
 		);
 	}
 
@@ -68,6 +71,7 @@ class Jetpack_Options {
 	 * @param mixed  $value Option value
 	 */
 	public static function update_option( $name, $value ) {
+		do_action( 'pre_update_jetpack_option_' . $name, $name, $value );
 		if ( in_array( $name, self::get_option_names( 'non_compact' ) ) ) {
 			return update_option( "jetpack_$name", $value );
 		} else if ( !in_array( $name, self::get_option_names() ) ) {
