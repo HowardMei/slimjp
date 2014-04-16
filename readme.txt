@@ -1,27 +1,29 @@
-=== Slim Jetpack ===
+=== Slim JP ===
 Contributors: wingerspeed
 Tags: jetpack, slim jetpack, views, tweets, twitter, widget, gravatar, hovercards, profile, equations, latex, math, maths, youtube, shortcode, archives, audio, blip, bliptv, dailymotion, digg, flickr, googlevideo, google, googlemaps, kyte, kytetv, livevideo, redlasso, rockyou, rss, scribd, slide, slideshare, soundcloud, vimeo, shortlinks, wp.me, subscriptions, notifications, notes, json, api, rest, mosaic, gallery, slideshow
-Requires at least: 3.6
-Tested up to: 3.8
-Stable tag: 2.7.0.1
+Stable tag: 2.9.3
+Requires at least: 3.7
+Tested up to: 3.8.1
+=======
 
-Slim version of Jetpack unlinked from WordPress.com :)
+Slim version of JP unlinked from WordPress.com :)
 Supercharge your self-hosted wp site even you're NOT WP.COM users.
 
 == Description ==
 
+<<<<<<< HEAD
 [Jetpack](http://jetpack.me/) is an awesome plugin bundle provided by the Automattic, but it requires WordPress.com account
 even for those modules previously work as independent plugins. The marketing banners are very obtrusive too.
 
-I smashed the bundle to remove the annoying parts and keep the awesomeness. Slim Jetpack will track the updates of Jetpack modules,
+I smashed the bundle to remove the annoying parts and keep the awesomeness. Slim JP will track the updates of Jetpack modules,
 but is definitely INCOMPATIBLE with its original version because a lot of API functions had been mocked or removed.
 
 All credit goes to original developers @
 [Jetpack](http://wordpress.org/extend/plugins/jetpack/developers/)!
 
-SlimJetpack 2.1.1.x is corresponding to Jetpack 2.1.1 and the x is the bugfix mark.
+SlimJP 2.1.1.x is corresponding to Jetpack 2.1.1 and the x is the bugfix mark.
 
-If you find any bug, please submit a ticket here: https://github.com/HowardMei/slimjetpack/issues  
+If you find any bug, please submit a ticket here: https://github.com/HowardMei/slimjp/issues  
 Or just fork the repository and send me pull requests ;)
 
 Please deactivate Slim Jetpack and use the original Jetpack instead if you need the wordpress.com likes/stats,  
@@ -35,7 +37,6 @@ subscription and push notification services etc.,
 * Custom CSS
 * Extra Sidebar Widgets
 * Gravatar Hovercards
-* Holiday Snow (Put back since v2.4.2)
 * Infinite Scroll
 * Minileven Mobile Theme
 * Omnisearch
@@ -63,6 +64,43 @@ subscription and push notification services etc.,
 * JSON API
 * Mobile Push Notifications
 * Enhanced Distribution
+=======
+[Jetpack](http://jetpack.me/) is a WordPress plugin that supercharges your self-hosted WordPress site with the awesome cloud power of WordPress.com.
+
+For more information, check out [Jetpack.me](http://jetpack.me/).
+
+Features include:
+
+* Simple, concise stats with no additional load on your server.  Previously provided by [WordPress.com Stats](http://wordpress.org/extend/plugins/stats/).
+* Email subscriptions for your blog's posts and your post's comments.
+* Social networking enabled comment system.
+* Likes, allowing your readers to show their appreciation of your posts.
+* Monitor and manage your site's activity with Notifications in your Toolbar and on WordPress.com.
+* Simple, Akismet-backed contact forms.
+* The [WP.me URL shortener](http://wp.me/sf2B5-shorten).
+* Hovercard popups for your commenters via [Gravatar](http://gravatar.com/).
+* Easily embedded media from popular sites like YouTube, Digg, and Vimeo.
+* The ability to post to your blog from any email client.
+* Integration with and automatic posting to your favorite social networks including Twitter, Facebook, Tumblr, Path, and LinkedIn.
+* For the Math geeks, a simple way to include beautiful mathematical expressions on your site.
+* A widget for displaying recent tweets.  Previously provided by [Wickett Twitter Widget](http://wordpress.org/extend/plugins/wickett-twitter-widget/)
+* Your readers can easily share your posts via email or their favorite social networks.  Previously provided by the [Sharedaddy](http://wordpress.org/extend/plugins/sharedaddy/) WordPress plugin.
+* Your writing will improve thanks to After the Deadline, an artificial intelligence based spell, style, and grammar checker.  Previously provided by the [After the Deadline](http://wordpress.org/extend/plugins/after-the-deadline/) WordPress plugin.
+* With Carousel active, any standard WordPress galleries you have embedded in posts or pages will launch a gorgeous full-screen photo browsing experience with comments and EXIF metadata.
+* A CSS editor that lets you customize your site design without modifying your theme.
+* A mobile theme that automatically streamlines your site for visitors on mobile devices.
+* Mobile push notifications for new comments via WordPress mobile apps.
+* The ability to allow applications to securely authenticate and access your site with your permission.
+* Creative formats for your image galleries: mosaic, circles, squares, and a slideshow view.
+* Add post sliders and other highlights to your theme with Featured Content.
+* Search once, get results from everything! A single search box that lets you search posts, pages, comments, media, and plugins.
+* Configure widgets to appear only on certain pages with the [Widget Visibility module](http://jetpack.me/support/widget-visibility/).
+* Upload and insert videos into your posts thanks to [VideoPress](http://jetpack.me/support/videopress/).
+* [Link Jetpack and your Google+ Profile](http://jetpack.me/support/google-plus/) to add mutliple Google features to your site.
+* Sign in to your self-hosted WordPress site using your WordPress.com log-in credentials.
+* Jetpack Monitor will keep tabs on your site, and alert you the moment that downtime is detected.
+* and *many* more to come!
+>>>>>>> develop
 
 == Installation ==
 
@@ -92,11 +130,16 @@ It should work without problem :)
 
 == Screenshots ==
 
-1. SlimJetpack
+1. SlimJP
 
 http://plugins.svn.wordpress.org/slimjetpack/assets/SlimJetpack.png
 
 == Changelog ==
+
+= 2.9.3 =
+Fixed some branding issues on admin pages.
+
+... ...
 
 = 2.7.0.1 =
 * Change custom-css editor back to ACE for better CSS Hint
@@ -132,6 +175,76 @@ http://plugins.svn.wordpress.org/slimjetpack/assets/SlimJetpack.png
 
 
 == Original Jetpack Changelog ==
+=======
+= 2.9.3 =
+* Important security update. CVE-2014-0173
+
+= 2.9.2 =
+* Bugfix: Publicize: When publishing from a mobile app or third-party client, Publicize now works again.
+
+= 2.9.1 =
+* Bugfix: After the Deadline: Fix a Javascript glitch that could prevent publishing of posts.
+* Bugfix: SSO: Disable the implementation of an option that had been removed before release.  This would have only been an issue if a site administrator had enabled the module during an early beta of 2.9.
+
+= 2.9 =
+* Added Multisite network functionality
+* New Module: Related Posts
+* Enhancement: Single Sign On
+* Enhancement: Mixcloud shortcode and oEmbed
+* Enhancement: Gist shortcode and oEmbed
+* Enhancement: Modify Facebook Like Box widget to support new Facebook parameters
+* Enhancement: Rolled the Push Notifications module into the Notes module
+* Enhancement: Update kses with Markdown
+* Enhancement: Adding keyboard accessibility to sharing buttons config page
+* Enhancement: Pull WordPress testing bits from the new official git mirror at WordPress.org
+* Bugfix: Widget Visibility
+* Bugfix: Revisions box in Custom CSS
+* Bugfix: Fix several bugs in the WordPress Posts Widget so that it correctly updates
+* Bugfix: Limit Login Attempts no longer generates false positives from xmlrpc.
+* Bugfix: Clear max_posts transient on theme switch.
+* Bugfix: Lower priority of sync to allow all CPTs to be registered.
+* Bugfix: Contact form fields emailed in correct order. 
+
+* Other bugfixes and enhancements at https://github.com/Automattic/jetpack/commits/2.9
+
+= 2.8 =
+* New Module: Markdown
+* Module Update: Jetpack Monitor
+* Enhancement: Infinite Scroll: Keep track of $current_day between requests so the_date() works well.
+* Enhancement: Embeds: New filter to turn off embeds in comments.
+* Enhancement: Contact Form: Add placeholder support.
+* Enhancement: Widget: Gravatar Profile: Added filters to allow users to customize headings and fixed output of personal links.
+* Enhancement: Facebook OG Tags: Add `published_time`, `modified_time`, and `author` if the post type supports it.
+* Enhancement: Sharing: Display buttons on CPT archive pages.
+* Enhancement: Sharing: Add `get_share_title` function and filter.
+* Enhancement: Sharing: Add filter `sharing_display_link`.
+* Enhancement: Twitter Timeline: Flesh out tweet limit option.
+* Enhancement: Social Links: Add Google+ to the list of supported services.
+* Enhancement: Stats: Improve dashboard styles in 3.8.
+* Enhancement: Stats: No longer use Quantcast.
+* Enhancement: Top Posts: Add `jetpack_top_posts_days` filter.
+* Enhancement: AtD: Add TinyMCE 4 compatability for its pending arrival in WordPress 3.9
+* Enhancement: Genericons: Update to v3.0.3
+* Enhancement: Tiled Galleries: Add alt attributes to images.
+* Enhancement: Shortcode: YouTube: Accept protocol-relative URLs.
+* Enhancement: Shortcode: Slideshow: Add white background option.
+* Enhancement: Shortcode: YouTube: Add support for the two closed-caption arguments.
+* Enhancement: Shortcode: Vimeo: Update the regex to support the new embed code.
+* Enhancement: Shortcode: Google Maps: Update the regex to handle new format for embeds.
+* Enhancement: Likes: Avoid a PHP Notice when $_POST['post_type'] is not set in meta_box_save.
+* Enhancement: Smush images to save on file size.
+* Enhancement: Publicize: Enable opt-in publicizing of custom post types.
+* Bug Fix: Random Redirect: Further namespace to avoid conflicts.
+* Bug Fix: Twitter Timeline: Resolve undefined index notice.
+* Bug Fix: Featured Content: Add extra class_exists() check to be extra careful.
+* Bug Fix: Facebook OG Tags: Change OG type of Home and Front Page to 'website'
+* Bug Fix: Widget Visibility: Add support for old-style single use widgets.
+* Bug Fix: Google Authorship: Support apostrophe in author names.
+* Bug Fix: Media Extractor: Assorted graceful failure caveats.
+* Bug Fix: Carousel: 'Link to None' bug fixed.
+* Bug Fix: Embeds: Bandcamp: Switch escaping function for album and track IDs to handle (int)s greater than PHP_INT_MAX
+* Bug Fix: Some plugins trying to catch brute-force attacks mistakenly flagged the Jetpack connection as one.
+>>>>>>> develop
 
 = 2.7 =
 * Enhancement: Google+ Publicize
