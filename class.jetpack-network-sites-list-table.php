@@ -42,7 +42,7 @@ class Jetpack_Network_Sites_List_Table extends WP_List_Table {
             		'edit'      	=> '<a href="' . network_admin_url( 'site-info.php?id=' . $item->blog_id )  .  '">' . __( 'Edit', 'jetpack' ) . '</a>',
         		'dashboard'	=> '<a href="' . get_admin_url( $item->blog_id, '', 'admin' ) . '">Dashboard</a>',
 			'view'		=> '<a href="' . get_site_url( $item->blog_id, '', 'admin' ) . '">View</a>',
-			'jetpack-' . $item->blog_id	=> '<a href="' . $jp_url . '">Jetpack</a>', 
+			'jetpack-' . $item->blog_id	=> '<a href="' . $jp_url . '">Slimjp</a>', 
 		);
 
   		return sprintf('%1$s %2$s', '<strong>' . get_blog_option( $item->blog_id, 'blogname' ) . '</strong>', $this->row_actions($actions) );
@@ -70,7 +70,7 @@ class Jetpack_Network_Sites_List_Table extends WP_List_Table {
 
 		    ) );
 		    restore_current_blog();
-		    return '<a href="' . $url . '">Disconnect</a>';
+		    return 'Disconnected';
 		}
 		restore_current_blog();
 		

@@ -36,7 +36,7 @@ class Jetpack_Network {
 	 */
 	private $setting_defaults = array(
 		'auto-connect'		=> 0,
-		'sub-site-connection-override'	=> 1,
+		'sub-site-connection-override'	=> 0,
 	//	'manage_auto_activated_modules' => 0,
 	);
 
@@ -53,7 +53,7 @@ class Jetpack_Network {
 		 */
 		if (is_multisite() && is_network_admin()) {
 			add_action('network_admin_menu', array($this, 'add_network_admin_menu'));
-			add_action('network_admin_edit_jetpack-network-settings', array($this, 'save_network_settings_page'), 10, 0);
+			//slim//add_action('network_admin_edit_jetpack-network-settings', array($this, 'save_network_settings_page'), 10, 0);
 			add_action( 'admin_init', array ( $this,  'jetpack_sites_list' ) );
 			add_filter( 'admin_body_class', array( $this, 'body_class' ) );
 			add_filter( 'wpmu_blogs_columns', array( $this, 'add_jetpack_sites_column' ) );
@@ -65,7 +65,7 @@ class Jetpack_Network {
 		 * Things that should only run on multisite
 		 */
 		if( is_multisite()  && is_plugin_active_for_network( 'jetpack/jetpack.php' ) ) {
-			add_action( 'wp_before_admin_bar_render', array( $this, 'add_to_menubar' ) );
+			//slim//add_action( 'wp_before_admin_bar_render', array( $this, 'add_to_menubar' ) );
 
 
 			/*
@@ -148,7 +148,7 @@ class Jetpack_Network {
 	 * @return array
 	 **/
 	public function add_jetpack_sites_column( $columns ) {
-		$columns['jetpack_connection'] = __( 'Jetpack' );
+		$columns['jetpack_connection'] = __( 'Slimjp' );
 		return $columns;
 	}
 
@@ -307,9 +307,9 @@ class Jetpack_Network {
 	public function add_network_admin_menu() {
 		add_action( 'admin_print_styles', array( $this, 'network_admin_styles' ) );
 		
-		add_menu_page(__('Jetpack', 'jetpack'), __('Jetpack', 'jetpack'), 'read', 'jetpack', array($this, 'network_admin_page'), 'div', 3);
-		add_submenu_page('jetpack', 'Jetpack Sites', 'Sites', 'manage_options', 'jetpack', array($this, 'network_admin_page'));
-		add_submenu_page('jetpack', __('Settings', 'jetpack'), __('Settings', 'jetpack'), 'read', 'jetpack-settings', array($this, 'render_network_admin_settings_page'));
+		add_menu_page(__('Slimjp', 'jetpack'), __('Slimjp', 'jetpack'), 'read', 'jetpack', array($this, 'network_admin_page'), 'div', 3);
+		add_submenu_page('Slimjp', 'Slimjp Sites', 'Sites', 'manage_options', 'jetpack', array($this, 'network_admin_page'));
+		//add_submenu_page('jetpack', __('Settings', 'jetpack'), __('Settings', 'jetpack'), 'read', 'jetpack-settings', array($this, 'render_network_admin_settings_page'));
 		
 		/**
 		 * As jetpack_register_genericons is by default fired off a hook,
@@ -351,7 +351,7 @@ class Jetpack_Network {
 		} else {
 			$css = "
 				#toplevel_page_jetpack .wp-menu-image {
-					background: url( " . plugins_url( '_inc/images/menuicon-sprite.png', __FILE__ ) . " ) 0 90% no-repeat;
+					background: transparent;
 				}
 				/* Retina Jetpack Menu Icon */
 				@media  only screen and (-moz-min-device-pixel-ratio: 1.5),
@@ -359,7 +359,7 @@ class Jetpack_Network {
 						only screen and (-webkit-min-device-pixel-ratio: 1.5),
 						only screen and (min-device-pixel-ratio: 1.5) {
 					#toplevel_page_jetpack .wp-menu-image {
-						background: url( " . plugins_url( '_inc/images/menuicon-sprite-2x.png', __FILE__ ) . " ) 0 90% no-repeat;
+						background: transparent;
 						background-size:30px 64px;
 					}
 				}
@@ -640,7 +640,7 @@ class Jetpack_Network {
 			$myListTable->display();
 			echo '</form></div>';
 		
-		$this->network_admin_page_footer();
+		//slim//$this->network_admin_page_footer();
 	}
 	
 	/**
@@ -656,7 +656,7 @@ class Jetpack_Network {
 		$is_user_connected = $user_token && ! is_wp_error( $user_token );
 		$is_master_user    = $current_user->ID == Jetpack_Options::get_option( 'master_user' );
 
-		require_once( 'views/admin/network-admin-header.php' );
+		//slim//require_once( 'views/admin/network-admin-header.php' );
 	}
 	
 	/**
