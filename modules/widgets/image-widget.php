@@ -11,7 +11,7 @@ class Jetpack_Image_Widget extends WP_Widget {
 	function Jetpack_Image_Widget() {
 		$widget_ops = array( 'classname' => 'widget_image', 'description' => __( "Display an image in your sidebar", 'jetpack' ) );
 		$control_ops = array( 'width' => 400 );
-		$this->WP_Widget( 'image', __( 'Image (Jetpack)', 'jetpack' ), $widget_ops, $control_ops );
+		parent::__construct( 'image', __( 'Image (Jetpack)', 'jetpack' ), $widget_ops, $control_ops );
 	}
 
 	function widget( $args, $instance ) {
