@@ -242,7 +242,7 @@ class Jetpack_Tiled_Gallery {
 		$orig_file       = wp_get_attachment_url( $attachment_id );
 		$meta            = wp_get_attachment_metadata( $attachment_id );
 		$size            = isset( $meta['width'] ) ? intval( $meta['width'] ) . ',' . intval( $meta['height'] ) : '';
-		$img_meta        = ( ! empty( $meta['image_meta'] ) ) ? (array) $meta['image_meta'] : array();
+		$img_meta        = ( ! empty( $meta['image_meta'] ) ) ? array_filter( (array) $meta['image_meta'] ) : array();
 		$comments_opened = intval( comments_open( $attachment_id ) );
 
 		$medium_file_info = wp_get_attachment_image_src( $attachment_id, 'medium' );
@@ -253,14 +253,14 @@ class Jetpack_Tiled_Gallery {
 		$attachment_title = wptexturize( $image->post_title );
 		$attachment_desc  = wpautop( wptexturize( $image->post_content ) );
 
-        // Not yet providing geo-data, need to "fuzzify" for privacy
-		if ( ! empty( $img_meta ) ) {
-            foreach ( $img_meta as $k => $v ) {
-                if ( 'latitude' == $k || 'longitude' == $k )
-                    unset( $img_meta[$k] );
-            }
-        }
-
+		// Not yet providing geo-data, need to "fuzzify" for privacy
+		foreach ( $img_meta as $k => $v ) {
+			if ( is_array($v) )
+				$img_meta[$k] = implode( ' ', $v );
+        		if ( 'latitude' == $k || 'longitude' == $k )
+            			unset( $img_meta[$k] );
+    		}
+		
 		$img_meta = json_encode( array_map( 'strval', $img_meta ) );
 
 		$output = sprintf(
